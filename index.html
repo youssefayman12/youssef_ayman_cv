@@ -18,6 +18,10 @@
       <span class="dot dot--yellow"></span>
       <span class="dot dot--green"></span>
       <span class="terminal__path">youssef@cv:~$</span>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle__label">dark</span>
+      </button>
     </div>
     <div class="terminal__body">
       <p class="terminal__line"><span class="prompt">$</span> whoami</p>
@@ -48,8 +52,15 @@
       </div>
 
       <section class="panel" aria-labelledby="contact-h">
-        <p class="filename">contact.yaml</p>
+        <div class="panel__head">
+          <p class="filename">contact.yaml</p>
+          <button class="toggle-btn" type="button" data-target="contact-content" aria-expanded="true">
+            <span class="toggle-btn__icon" aria-hidden="true">⌄</span> hide
+          </button>
+        </div>
         <h2 id="contact-h" class="sr-only">Contact</h2>
+        <div id="contact-content" class="collapsible-content">
+        <div class="collapsible-inner">
         <dl class="kv">
           <div><dt>email</dt><dd><a href="mailto:youssefaymansaleh@outlook.com">youssefaymansaleh@outlook.com</a></dd></div>
           <div><dt>phone</dt><dd><a href="tel:+201203900007">+20 120 390 0007</a></dd></div>
@@ -58,11 +69,21 @@
           <div><dt>nationality</dt><dd>Egyptian</dd></div>
           <div><dt>military_status</dt><dd>Exempted</dd></div>
         </dl>
+        </div>
+        </div>
       </section>
 
       <section class="panel" aria-labelledby="skills-h">
-        <p class="filename">skills.json</p>
+        <div class="panel__head">
+          <p class="filename">skills.json</p>
+          <button class="toggle-btn" type="button" data-target="skills-content" aria-expanded="true">
+            <span class="toggle-btn__icon" aria-hidden="true">⌄</span> hide
+          </button>
+        </div>
         <h2 id="skills-h">Skills</h2>
+
+        <div id="skills-content" class="collapsible-content">
+        <div class="collapsible-inner">
 
         <h3 class="group-label">Programming &amp; scripting</h3>
         <ul class="tags">
@@ -86,15 +107,34 @@
         <ul class="tags">
           <li>Leadership</li><li>Communication</li><li>Teamwork</li><li>Critical thinking</li><li>Creativity</li>
         </ul>
+
+        <h3 class="group-label">Add your own</h3>
+        <form id="skill-form" class="skill-form">
+          <input type="text" id="skill-input" placeholder="e.g. Prometheus" aria-label="New skill name" autocomplete="off">
+          <button type="submit">Add</button>
+        </form>
+        <ul class="tags" id="custom-skills-list" aria-live="polite"></ul>
+
+        </div>
+        </div>
       </section>
 
       <section class="panel" aria-labelledby="lang-h">
-        <p class="filename">languages.yaml</p>
+        <div class="panel__head">
+          <p class="filename">languages.yaml</p>
+          <button class="toggle-btn" type="button" data-target="lang-content" aria-expanded="true">
+            <span class="toggle-btn__icon" aria-hidden="true">⌄</span> hide
+          </button>
+        </div>
         <h2 id="lang-h">Languages</h2>
+        <div id="lang-content" class="collapsible-content">
+        <div class="collapsible-inner">
         <ul class="langs">
           <li><span>English</span><span class="bar"><span style="width:85%"></span></span><span class="level">Proficient</span></li>
           <li><span>Arabic</span><span class="bar"><span style="width:100%"></span></span><span class="level">Native</span></li>
         </ul>
+        </div>
+        </div>
       </section>
 
     </aside>
@@ -102,8 +142,15 @@
     <main class="main">
 
       <section class="panel" aria-labelledby="profile-h">
-        <p class="filename">profile.md</p>
+        <div class="panel__head">
+          <p class="filename">profile.md</p>
+          <button class="toggle-btn" type="button" data-target="profile-content" aria-expanded="true">
+            <span class="toggle-btn__icon" aria-hidden="true">⌄</span> hide
+          </button>
+        </div>
         <h2 id="profile-h">Profile</h2>
+        <div id="profile-content" class="collapsible-content">
+        <div class="collapsible-inner">
         <p>
           Undergraduate in Management of Information and Communication Technology with a strong
           interest in DevOps, cloud computing, and automation. Hands-on experience with Docker,
@@ -112,11 +159,20 @@
           to support scalable IT solutions, and is looking to keep growing in DevOps and IT
           operations roles.
         </p>
+        </div>
+        </div>
       </section>
 
       <section class="panel" aria-labelledby="edu-h">
-        <p class="filename">education.yaml</p>
+        <div class="panel__head">
+          <p class="filename">education.yaml</p>
+          <button class="toggle-btn" type="button" data-target="edu-content" aria-expanded="true">
+            <span class="toggle-btn__icon" aria-hidden="true">⌄</span> hide
+          </button>
+        </div>
         <h2 id="edu-h">Education</h2>
+        <div id="edu-content" class="collapsible-content">
+        <div class="collapsible-inner">
         <div class="entry">
           <div class="entry__head">
             <h3>Management of Information and Communication Technology (MICT)</h3>
@@ -125,11 +181,21 @@
           <p class="entry__org">The American University in Cairo — School of Business</p>
           <p class="entry__loc">Cairo, Egypt</p>
         </div>
+        </div>
+        </div>
       </section>
 
       <section class="panel" aria-labelledby="exp-h">
-        <p class="filename">experience.log</p>
+        <div class="panel__head">
+          <p class="filename">experience.log</p>
+          <button class="toggle-btn" type="button" data-target="exp-content" aria-expanded="true">
+            <span class="toggle-btn__icon" aria-hidden="true">⌄</span> hide
+          </button>
+        </div>
         <h2 id="exp-h">Professional Experience</h2>
+
+        <div id="exp-content" class="collapsible-content">
+        <div class="collapsible-inner">
 
         <div class="entry">
           <div class="entry__head">
@@ -172,11 +238,22 @@
             communication, and problem-solving through real-world case studies.
           </p>
         </div>
+
+        </div>
+        </div>
       </section>
 
       <section class="panel" aria-labelledby="proj-h">
-        <p class="filename">projects.json</p>
+        <div class="panel__head">
+          <p class="filename">projects.json</p>
+          <button class="toggle-btn" type="button" data-target="proj-content" aria-expanded="true">
+            <span class="toggle-btn__icon" aria-hidden="true">⌄</span> hide
+          </button>
+        </div>
         <h2 id="proj-h">Projects</h2>
+
+        <div id="proj-content" class="collapsible-content">
+        <div class="collapsible-inner">
         <div class="cards">
           <article class="card">
             <h3>Full-Stack Authentication System</h3>
@@ -185,6 +262,18 @@
               A microservices-based authentication system built and deployed using containerized
               services, applying DevOps practices to a full-stack setup.
             </p>
+            <button class="toggle-btn toggle-btn--link" type="button" data-target="proj-1-details" aria-expanded="false">
+              <span class="toggle-btn__icon" aria-hidden="true">⌄</span> view details
+            </button>
+            <div id="proj-1-details" class="collapsible-content is-collapsed">
+              <div class="collapsible-inner">
+                <p class="card__detail">
+                  Services run in separate containers and talk to each other over an internal
+                  Docker network, with auth state kept isolated from the rest of the app so it can
+                  be scaled or redeployed on its own.
+                </p>
+              </div>
+            </div>
           </article>
           <article class="card">
             <h3>Secure CI/CD Pipeline for Kubernetes Deployment</h3>
@@ -193,7 +282,57 @@
               A CI/CD pipeline that builds, secures, and ships a Flask application to a Kubernetes
               cluster, covering automated testing and deployment stages.
             </p>
+            <button class="toggle-btn toggle-btn--link" type="button" data-target="proj-2-details" aria-expanded="false">
+              <span class="toggle-btn__icon" aria-hidden="true">⌄</span> view details
+            </button>
+            <div id="proj-2-details" class="collapsible-content is-collapsed">
+              <div class="collapsible-inner">
+                <p class="card__detail">
+                  The pipeline builds the Flask app, runs its test suite, then deploys to the
+                  cluster using versioned Kubernetes manifests — so a failing build or test never
+                  reaches production.
+                </p>
+              </div>
+            </div>
           </article>
+        </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="contact-form-h">
+        <div class="panel__head">
+          <p class="filename">message.js</p>
+          <button class="toggle-btn" type="button" data-target="message-content" aria-expanded="true">
+            <span class="toggle-btn__icon" aria-hidden="true">⌄</span> hide
+          </button>
+        </div>
+        <h2 id="contact-form-h">Get in Touch</h2>
+        <div id="message-content" class="collapsible-content">
+        <div class="collapsible-inner">
+        <p class="form-note">
+          This sends through your own email client — nothing is stored or sent from this page.
+        </p>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name">
+            <span class="form-error" id="cf-name-error" role="alert"></span>
+          </div>
+          <div class="form-row">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email">
+            <span class="form-error" id="cf-email-error" role="alert"></span>
+          </div>
+          <div class="form-row">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="4"></textarea>
+            <span class="form-error" id="cf-message-error" role="alert"></span>
+          </div>
+          <button type="submit" class="btn-primary">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+        </div>
         </div>
       </section>
 
@@ -204,5 +343,6 @@
     <p>Built by Youssef Ayman Saleh · Cairo, Egypt</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
